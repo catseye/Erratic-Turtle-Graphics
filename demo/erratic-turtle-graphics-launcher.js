@@ -10,9 +10,17 @@ function launch(config) {
   config.container.appendChild(can);
 
   var turtle = (new ErraticTurtle()).init({ canvas: can });
-  turtle.reset();
-  var method = 'drawLines';
-  turtle[method]();
+  var program = "setxyp 0.125 0.5 lt 90 repeat 7 [ repeat 50 [ fd 150 lt 180 ] shiftxyp 0.125 0.0 ]";
+
+  function run() {
+    turtle.reset();
+    var p = (new Parser()).init(program);
+    var i = p.parseInstrs();
+    console.log(uneval(i));
+    interpretInstrs(i, turtle);
+  }
+
+  run();
 
   var controlPanel = div(
     div(
@@ -21,42 +29,29 @@ function launch(config) {
         options: [
           {
             text: 'Lines',
-            value: 'drawLines',
+            value: "setxyp 0.125 0.5 lt 90 repeat 7 [ repeat 50 [ fd 150 lt 180 ] shiftxyp 0.125 0.0 ]"
           },
           {
             text: 'Boxes',
-            value: 'drawBoxes',
+            value: "setxyp 0.125 0.666 lt 90 repeat 7 [ repeat 400 [ fd 50 lt 90 ] shiftxyp 0.125 0.0 ]"
           },
           {
             text: 'Circles',
-            value: 'drawCircles',
+            value: "setxyp 0.125 0.666 lt 90 repeat 7 [ repeat 4500 [ fd 1.0 lt 4 ] shiftxyp 0.125 0.0 ]"
           },
           {
             text: 'Circle Chain',
-            value: 'drawCircleChain',
-          },
-          {
-            text: 'Logo',
-            value: 'logo',
-            program: "setxyp 0.125 0.5 lt 90 repeat 7 [ repeat 50 [ fd 150 lt 180 ] shiftxyp 0.125 0.0 ]"
+            value: "setxyp 1.0 0.5 lt 90 repeat 7 [ repeat 1845 [ fd 2.0 lt 4 ] lt 180 ] repeat 7 [ repeat 1845 [ fd 2.0 lt 4 ] lt 180 ]"
           }
         ],
         onchange: function(option) {
-          method = option.value;
-          turtle.reset();
-          if (method === 'logo') {
-            var p = (new Parser()).init(option.program);
-            var i = p.parseInstrs();
-            console.log(uneval(i));
-            interpretInstrs(i, turtle);
-          } else {
-            turtle[method]();
-          }
+          program = option.value;
+          run();
         }
       })
     ),
     div(
-      button("Re-roll", { onclick: function() { turtle.reset(); turtle[method](); }})
+      button("Re-roll", { onclick: function() { run(); }})
     )
   );
   config.container.appendChild(controlPanel);
