@@ -43,6 +43,16 @@ var ErraticTurtle = function() {
         this.y += this.canvas.height * dyp;
     };
 
+    this.setErrorRates = function(rerr, merr) {
+        this.rotateError = rerr;
+        this.moveError = merr;
+    };
+
+    this.shiftErrorRates = function(drerr, dmerr) {
+        this.rotateError += drerr;
+        this.moveError += dmerr;
+    };
+
     /* dtheta is in radians */
     this.rotateBy = function(dtheta) {
         var error = (Math.random() - 0.5) * this.rotateError;

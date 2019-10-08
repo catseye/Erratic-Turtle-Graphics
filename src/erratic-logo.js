@@ -115,6 +115,7 @@ var Parser = function() {
     /*
      * Instr ::= "fd" Number | "rt" Number | "lt" Number
      *         | "setxyp" Number Number | "shiftxyp" Number Number
+     *         | "seterr" Number Number | "shifterr" Number Number
      *         | "repeat" Number "[" Instrs "]".
      */
     this.parseInstr = function() {
@@ -142,6 +143,18 @@ var Parser = function() {
             var yval = this.scanner.token;
             this.scanner.expectType('number');
             return ["shiftxyp", parseFloat(xval), parseFloat(yval)];
+        } else if (this.scanner.consume('seterr')) {
+            var rerrval = this.scanner.token;
+            this.scanner.expectType('number');
+            var merrval = this.scanner.token;
+            this.scanner.expectType('number');
+            return ["seterr", parseFloat(rerrval), parseFloat(merrval)];
+        } else if (this.scanner.consume('shifterr')) {
+            var rerrval = this.scanner.token;
+            this.scanner.expectType('number');
+            var merrval = this.scanner.token;
+            this.scanner.expectType('number');
+            return ["shifterr", parseFloat(rerrval), parseFloat(merrval)];
         } else if (this.scanner.consume('repeat')) {
             var val = this.scanner.token;
             this.scanner.expectType('number');
@@ -184,6 +197,12 @@ function interpretInstr(instr, turtle) {
       break;
     case "shiftxyp":
       turtle.shiftXYProportional(instr[1], instr[2]);
+      break;
+    case "seterr":
+      turtle.setErrorRates(instr[1], instr[2]);
+      break;
+    case "shifterr":
+      turtle.shiftErrorRates(instr[1], instr[2]);
       break;
     case "repeat":
       for (var k = 0; k < instr[1]; k++) {
