@@ -29,10 +29,28 @@ var ErraticTurtle = function() {
         this.dy = Math.sin(theta);
     };
 
+    this.setThetaDeg = function(theta) {
+        this.setTheta(theta * DEG);
+    };
+
+    this.setXYProportional = function(xp, yp) {
+        this.x = this.canvas.width * xp;
+        this.y = this.canvas.height * yp;
+    };
+
+    this.shiftXYProportional = function(dxp, dyp) {
+        this.x += this.canvas.width * dxp;
+        this.y += this.canvas.height * dyp;
+    };
+
     /* dtheta is in radians */
     this.rotateBy = function(dtheta) {
         var error = (Math.random() - 0.5) * this.rotateError;
         this.setTheta(this.theta + dtheta + error);
+    };
+
+    this.rotateByDeg = function(dtheta) {
+        this.rotateBy(dtheta * DEG);
     };
     
     this.moveBy = function(units) {
