@@ -28,7 +28,7 @@ function launch(config) {
       value: "setxyp 0.125 0.666 lt 18 repeat 7 [ repeat 500 [ fd 150 lt 144 ] shiftxyp 0.125 0.0 shifterr 0.00375 0.3 ]"
     },
     {
-      text: 'Circle Chain',
+      text: 'Chain',
       value: "setxyp 1.0 0.5 repeat 7 [ repeat 1845 [ fd 2.0 lt 4 ] lt 180 shifterr 0.00375 0.225 ] repeat 7 [ repeat 1845 [ fd 2.0 lt 4 ] lt 180 shifterr -0.00375 -0.225 ]"
     }
   ];
@@ -38,7 +38,6 @@ function launch(config) {
     turtle.reset();
     var p = (new Parser()).init(program);
     var i = p.parseInstrs();
-    console.log(uneval(i));
     interpretInstrs(i, turtle);
   }
 
@@ -56,7 +55,7 @@ function launch(config) {
       })
     ),
     div(
-      programTextarea,
+      programTextarea
     ),
     div(
       button("Run", {
