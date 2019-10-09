@@ -187,10 +187,10 @@ function interpretInstr(instr, turtle) {
       turtle.moveBy(instr[1]);
       break;
     case "rt":
-      turtle.rotateByDeg(instr[1]);
+      turtle.rotateBy(instr[1]);
       break;
     case "lt":
-      turtle.rotateByDeg(-1 * instr[1]);
+      turtle.rotateBy(-1 * instr[1]);
       break;
     case "setxyp":
       turtle.setXYProportional(instr[1], instr[2]);

@@ -22,15 +22,11 @@ var ErraticTurtle = function() {
         this.moveError = 0.0;
     };
 
-    /* theta is in radians */
+    /* theta is in degrees */
     this.setTheta = function(theta) {
         this.theta = theta;
         this.dx = Math.cos(theta);
         this.dy = Math.sin(theta);
-    };
-
-    this.setThetaDeg = function(theta) {
-        this.setTheta(theta * DEG);
     };
 
     this.setXYProportional = function(xp, yp) {
@@ -53,14 +49,10 @@ var ErraticTurtle = function() {
         this.moveError += dmerr;
     };
 
-    /* dtheta is in radians */
+    /* dtheta is in degrees */
     this.rotateBy = function(dtheta) {
         var error = (Math.random() - 0.5) * this.rotateError;
-        this.setTheta(this.theta + dtheta + error);
-    };
-
-    this.rotateByDeg = function(dtheta) {
-        this.rotateBy(dtheta * DEG);
+        this.setTheta(this.theta + (dtheta * DEG) + error);
     };
     
     this.moveBy = function(units) {
