@@ -22,7 +22,7 @@ var ErraticTurtle = function() {
         this.moveError = 0.0;
     };
 
-    /* theta is in degrees */
+    /* theta is in radians */
     this.setTheta = function(theta) {
         this.theta = theta;
         this.dx = Math.cos(theta);
