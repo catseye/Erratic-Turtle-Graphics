@@ -14,7 +14,7 @@ var ErraticTurtle = function() {
 
         this.x = this.canvas.width / 2;
         this.y = this.canvas.height / 2;
-        this.setTheta(0.0);
+        this.setTheta(270 * DEG);
         this.ctx.strokeStyle = 'rgba(0,0,0,0.05)';
         this.ctx.lineWidth = 1;
 
