@@ -3,6 +3,8 @@ Erratic Turtle Graphics
 
 ![screenshot](images/chain1.png?raw=true)
 
+_Try it online [here](https://catseye.tc/installation/Erratic_Turtle_Graphics)._
+
 This is a gewgaw that I prototyped sometime in (I believe) 2018.
 I don't remember when I had the original idea, but I think it was
 not long before that.
