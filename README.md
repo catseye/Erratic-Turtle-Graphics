@@ -2,8 +2,8 @@ Erratic Turtle Graphics
 =======================
 
 _Try it online_ [@ catseye.tc](https://catseye.tc/installation/Erratic_Turtle_Graphics)
-| _See also:_ [Maze Clouds](https://github.com/catseye/Maze-Clouds)
-∘ [Latcarf](https://github.com/catseye/Latcarf)
+| _See also:_ [Maze Clouds](https://github.com/catseye/Maze-Clouds#readme)
+∘ [Latcarf](https://github.com/catseye/Latcarf#readme)
 
 ![screenshot](images/chain1.png?raw=true)
 
