@@ -1,9 +1,11 @@
 Erratic Turtle Graphics
 =======================
 
-![screenshot](images/chain1.png?raw=true)
+_Try it online_ [@ catseye.tc](https://catseye.tc/installation/Erratic_Turtle_Graphics)
+| _See also:_ [Maze Clouds](https://github.com/catseye/Maze-Clouds)
+∘ [Latcarf](https://github.com/catseye/Latcarf)
 
-_Try it online [here](https://catseye.tc/installation/Erratic_Turtle_Graphics)._
+![screenshot](images/chain1.png?raw=true)
 
 This is a gewgaw that I prototyped sometime in (I believe) 2018.
 I don't remember when I had the original idea, but I think it was
