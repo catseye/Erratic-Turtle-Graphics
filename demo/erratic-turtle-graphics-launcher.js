@@ -1,5 +1,5 @@
 /*
- * dam-plus-widgets-web.js, erratic-turtle.js, and erratic-logo.js should be loaded before this.
+ * dam-plus-widgets-0.2.js, erratic-turtle.js, and erratic-logo.js should be loaded before this.
  * After this is loaded, call launch() to start the gewgaw.
  */
 
@@ -7,10 +7,16 @@ function launch(config) {
   var div=DAM.maker('div'), button=DAM.maker('button'), textarea=DAM.maker('textarea'), canvas=DAM.maker('canvas');
 
   var can = canvas({ width: 1000, height: 400 });
-  config.container.appendChild(can);
+  var viewport = div({ id: "canvas_viewport" });
+  viewport.appendChild(can);
+  config.container.appendChild(viewport);
 
   var turtle = (new ErraticTurtle()).init({ canvas: can });
   var options = [
+    {
+      text: 'Stars',
+      value: "setxyp 0.125 0.666 lt 18 repeat 7 [ repeat 500 [ fd 150 lt 144 ] shiftxyp 0.125 0.0 shifterr 0.00375 0.3 ]"
+    },
     {
       text: 'Lines',
       value: "setxyp 0.125 0.666 repeat 7 [ repeat 50 [ fd 150 lt 180 ] shiftxyp 0.125 0.0 shifterr 0.00375 0.3 ]"
@@ -22,10 +28,6 @@ function launch(config) {
     {
       text: 'Circles',
       value: "setxyp 0.125 0.5 repeat 7 [ repeat 4500 [ fd 1.0 lt 4 ] shiftxyp 0.125 0.0 shifterr 0.00375 0.05 ]"
-    },
-    {
-      text: 'Stars',
-      value: "setxyp 0.125 0.666 lt 18 repeat 7 [ repeat 500 [ fd 150 lt 144 ] shiftxyp 0.125 0.0 shifterr 0.00375 0.3 ]"
     },
     {
       text: 'Chain',
