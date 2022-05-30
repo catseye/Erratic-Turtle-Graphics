@@ -51,7 +51,7 @@ function launch(config) {
         options: options,
         onchange: function(option) {
           program = option.value;
-          programTextarea.innerHTML = program;
+          programTextarea.value = program;
           run();
         }
       })
