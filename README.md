@@ -2,9 +2,9 @@ Erratic Turtle Graphics
 =======================
 
 _Try it online_ [@ catseye.tc](https://catseye.tc/installation/Erratic_Turtle_Graphics)
-| _See also:_ [Maze Clouds](https://github.com/catseye/Maze-Clouds#readme)
-∘ [Latcarf](https://github.com/catseye/Latcarf#readme)
-∘ [Kolakoski Kurve](https://github.com/catseye/Kolakoski-Kurve#readme)
+| _See also:_ [Maze Clouds](https://codeberg.org/catseye/Maze-Clouds#maze-clouds)
+∘ [Latcarf](https://codeberg.org/catseye/Latcarf#latcarf)
+∘ [Kolakoski Kurve](https://codeberg.org/catseye/Kolakoski-Kurve#kolakoski-kurve)
 
 ![screenshot](images/chain1.png?raw=true)
 
